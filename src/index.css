@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0a0a12;
+    color: #f1f5f9;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a12;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a3c;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e67e22;
+}
+
+/* Festive Ambient Glow & Flame Effects */
+.glass-panel {
+  background: rgba(19, 19, 38, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(243, 156, 18, 0.15);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s ease;
+}
+.glass-panel-hover:hover {
+  background: rgba(25, 25, 48, 0.85);
+  border-color: rgba(243, 156, 18, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(243, 156, 18, 0.2);
+  transform: translateY(-4px);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fff 0%, #f39c12 50%, #e67e22 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-crimson-gradient {
+  background: linear-gradient(135deg, #ff6b6b 0%, #d9272e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animated Shimmer Button */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.btn-shimmer {
+  background: linear-gradient(90deg, #d9272e 0%, #f39c12 50%, #d9272e 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite linear;
+}
+
+/* Pulsing Golden Aura */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.pulse-aura {
+  animation: pulseGlow 6s infinite ease-in-out;
+}
+
+/* =========================================
+   Durga Puja Dhaak Interactive Animations
+   ========================================= */
+
+/* Dhaak Drum Rhythmic Vibration */
+@keyframes dhaakRhythm {
+  0% { transform: rotate(0deg) scale(1); }
+  20% { transform: rotate(-1.5deg) scale(1.025) translateY(-2px); }
+  45% { transform: rotate(1.8deg) scale(1.01) translateY(1px); }
+  70% { transform: rotate(-1.2deg) scale(1.03) translateY(-1px); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.animate-dhaak-beat {
+  animation: dhaakRhythm 0.36s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center center;
+}
+
+/* Kathi (Cane Drumstick) Percussive Strikes */
+@keyframes kathiStrikePrimary {
+  0% { transform: rotate(0deg); }
+  40% { transform: rotate(-34deg) translate(-6px, 10px); }
+  55% { transform: rotate(-38deg) translate(-8px, 12px); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes kathiStrikeSecondary {
+  0% { transform: rotate(0deg); }
+  35% { transform: rotate(0deg); }
+  70% { transform: rotate(-30deg) translate(-5px, 8px); }
+  85% { transform: rotate(-36deg) translate(-7px, 11px); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-kathi-primary {
+  animation: kathiStrikePrimary 0.36s infinite ease-in-out;
+  transform-origin: 85% 15%;
+}
+
+.animate-kathi-secondary {
+  animation: kathiStrikeSecondary 0.36s infinite ease-in-out;
+  transform-origin: 78% 22%;
+}
+
+/* Traditional White Heron / Crane Feathers (Boker Palok) Flutter */
+@keyframes featherFlutter {
+  0% { transform: rotate(0deg) scaleX(1); }
+  25% { transform: rotate(-5deg) scaleX(1.05) translateY(-3px); }
+  65% { transform: rotate(4deg) scaleX(0.97) translateY(2px); }
+  100% { transform: rotate(0deg) scaleX(1); }
+}
+
+.animate-feather-sway {
+  animation: featherFlutter 0.72s infinite ease-in-out;
+  transform-origin: 30% 50%;
+}
+
+/* Acoustic Reverberation Waves */
+@keyframes soundRingPulse {
+  0% { transform: scale(0.6); opacity: 0.85; }
+  50% { opacity: 0.45; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+.animate-sound-ring-1 {
+  animation: soundRingPulse 1.2s infinite cubic-bezier(0.2, 0.8, 0.4, 1);
+  transform-origin: center;
+}
+
+.animate-sound-ring-2 {
+  animation: soundRingPulse 1.2s infinite cubic-bezier(0.2, 0.8, 0.4, 1);
+  animation-delay: 0.4s;
+  transform-origin: center;
+}
+
+.animate-sound-ring-3 {
+  animation: soundRingPulse 1.2s infinite cubic-bezier(0.2, 0.8, 0.4, 1);
+  animation-delay: 0.8s;
+  transform-origin: center;
+}
+
+/* Floating Musical Notes */
+@keyframes noteFloatUp {
+  0% { transform: translateY(0px) rotate(0deg) scale(0.5); opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 0.85; }
+  100% { transform: translateY(-75px) rotate(22deg) scale(1.15); opacity: 0; }
+}
+
+.animate-note-float-1 {
+  animation: noteFloatUp 2s infinite ease-out;
+}
+.animate-note-float-2 {
+  animation: noteFloatUp 2.4s infinite ease-out;
+  animation-delay: 0.7s;
+}
+.animate-note-float-3 {
+  animation: noteFloatUp 2.1s infinite ease-out;
+  animation-delay: 1.3s;
+}
+
+/* Equalizer Bars */
+@keyframes eqBounce {
+  0%, 100% { height: 4px; }
+  50% { height: 20px; }
+}
+
+.animate-eq-1 { animation: eqBounce 0.45s infinite ease-in-out; }
+.animate-eq-2 { animation: eqBounce 0.32s infinite ease-in-out 0.1s; }
+.animate-eq-3 { animation: eqBounce 0.52s infinite ease-in-out 0.2s; }
+.animate-eq-4 { animation: eqBounce 0.38s infinite ease-in-out 0.15s; }
+.animate-eq-5 { animation: eqBounce 0.48s infinite ease-in-out 0.05s; }
+
