@@ -11,10 +11,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-12 border-b border-white/10">
           
-          {/* Brand Info (2 cols) */}
-          <div className="lg:col-span-2 space-y-4">
+          {/* Brand Info (4 cols) */}
+          <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
               <img
                 src="/logo.png"
@@ -42,23 +42,24 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
+          {/* Quick Links (2 cols) */}
+          <div className="lg:col-span-2">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-festive-gold/30 pb-2 w-max">
               Quick Navigation
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li><a href="#overview" className="hover:text-festive-gold transition">Overview & Countdown</a></li>
+              <li><a href="#theme" className="hover:text-festive-gold transition text-festive-yellow font-semibold">2026 Puja Theme ("অনুভূতি")</a></li>
               <li><a href="#sponsorship" className="hover:text-festive-gold transition">Sponsorship Packages</a></li>
-              <li><a href="#impact" className="hover:text-festive-gold transition font-semibold text-festive-yellow">Brand ROI & Reach</a></li>
+              <li><a href="#impact" className="hover:text-festive-gold transition">Brand ROI & Reach</a></li>
               <li><a href="#gallery" className="hover:text-festive-gold transition">Pandal & Media Gallery</a></li>
               <li><a href="#location" className="hover:text-festive-gold transition">Venue & Google Map</a></li>
               <li><a href="#contact" className="hover:text-festive-gold transition">Sponsorship Inquiry</a></li>
             </ul>
           </div>
 
-          {/* Sponsorship Tiers */}
-          <div>
+          {/* Sponsorship Tiers (3 cols) */}
+          <div className="lg:col-span-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-festive-gold/30 pb-2 w-max">
               Sponsorship Tiers
             </h4>
@@ -71,21 +72,24 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Official Email & Address */}
-          <div>
+          {/* Official Email & Address (3 cols) */}
+          <div className="lg:col-span-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 border-b border-festive-gold/30 pb-2 w-max">
               Contact Desk
             </h4>
             <div className="space-y-3 text-xs">
               <div>
-                <span className="text-slate-500 block text-[10px] uppercase font-bold">Email Inquiries</span>
-                <a href="mailto:bhattacharyaparadurgapuja@gmail.com" className="text-festive-yellow hover:underline">
-                  bhattacharyaparadurgapuja@gmail.com
+                <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Email Inquiries</span>
+                <a 
+                  href="mailto:bhattacharyaparadurgapuja@gmail.com" 
+                  className="text-festive-yellow hover:underline text-[12px] sm:text-xs block leading-relaxed [overflow-wrap:anywhere]"
+                >
+                  bhattacharyaparadurgapuja<wbr />@gmail.com
                 </a>
               </div>
               <div>
-                <span className="text-slate-500 block text-[10px] uppercase font-bold">Location</span>
-                <span className="text-slate-300">Bhattacharya Para Ground, beside Rabindra Bhaban, Baruipur, WB 700144</span>
+                <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Location</span>
+                <span className="text-slate-300 block leading-relaxed">Bhattacharya Para Ground, beside Rabindra Bhaban, Baruipur, WB 700144</span>
               </div>
             </div>
           </div>

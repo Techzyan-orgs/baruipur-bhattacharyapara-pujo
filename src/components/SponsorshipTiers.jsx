@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Award, Check, Sparkles, Star, ChevronRight, HelpCircle, Calculator, Zap } from 'lucide-react';
+import { Award, Check, Sparkles, Star, ChevronRight, HelpCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function SponsorshipTiers({ onSelectTier }) {
-  const [selectedBudget, setSelectedBudget] = useState(75000);
   const [selectedTierName, setSelectedTierName] = useState(null);
 
   const tiers = [
@@ -122,16 +121,6 @@ export default function SponsorshipTiers({ onSelectTier }) {
     }
   };
 
-  // Calculate estimated reach based on budget slider
-  const getEstimatedReach = (budget) => {
-    const footfall = Math.round((budget / 250000) * 150000 + 20000);
-    const banners = Math.max(2, Math.round(budget / 7500));
-    const impressions = Math.round(footfall * 3.5);
-    return { footfall: Math.min(150000, footfall), banners, impressions };
-  };
-
-  const calculatedMetrics = getEstimatedReach(selectedBudget);
-
   return (
     <section id="sponsorship" className="py-24 bg-festive-gradient relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -210,76 +199,6 @@ export default function SponsorshipTiers({ onSelectTier }) {
             </div>
           ))}
         </div>
-
-        {/* Interactive Custom Budget ROI Estimator */}
-        <div className="glass-panel p-8 rounded-3xl border-festive-gold/30 shadow-2xl max-w-4xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-festive-gold/20 border border-festive-gold/40 flex items-center justify-center text-festive-gold">
-              <Calculator className="w-5 h-5" />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-white">Instant Custom Sponsorship Estimator</h3>
-              <p className="text-xs text-slate-400">Slide to select your intended budget and view estimated brand reach</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            {/* Slider Column */}
-            <div className="md:col-span-7 space-y-6">
-              <div>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-semibold text-slate-300">Selected Budget:</span>
-                  <span className="text-2xl font-black text-festive-yellow font-mono">
-                    ₹{selectedBudget.toLocaleString('en-IN')}
-                  </span>
-                </div>
-                <input
-                  type="range"
-                  min="20000"
-                  max="250000"
-                  step="5000"
-                  value={selectedBudget}
-                  onChange={(e) => setSelectedBudget(Number(e.target.value))}
-                  className="w-full h-3 bg-black/60 rounded-lg appearance-none cursor-pointer accent-festive-gold border border-white/10"
-                />
-                <div className="flex justify-between text-[10px] text-slate-500 font-mono mt-1">
-                  <span>₹20,000</span>
-                  <span>₹1,000,00</span>
-                  <span>₹2,50,000+</span>
-                </div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-black/40 border border-white/10 text-xs text-slate-300 leading-relaxed">
-                <Zap className="w-4 h-4 text-festive-gold inline mr-1" />
-                Custom packages can be tailored to include specific gate positions, stall sizes, or digital video ad slots according to your corporate requirements.
-              </div>
-            </div>
-
-            {/* Calculated Metrics */}
-            <div className="md:col-span-5 bg-festive-card p-6 rounded-2xl border border-festive-gold/30 text-center space-y-4">
-              <div>
-                <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-widest">Est. Venue Footfall</span>
-                <span className="text-3xl font-black text-white font-mono">{calculatedMetrics.footfall.toLocaleString('en-IN')}+</span>
-              </div>
-              <div className="pt-3 border-t border-white/10">
-                <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-widest">Est. Digital & Print Views</span>
-                <span className="text-2xl font-bold text-festive-yellow font-mono">{calculatedMetrics.impressions.toLocaleString('en-IN')}+</span>
-              </div>
-              <div className="pt-3 border-t border-white/10">
-                <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-widest">Brand Banners Included</span>
-                <span className="text-xl font-bold text-festive-cream font-mono">{calculatedMetrics.banners} Dedicated Spots</span>
-              </div>
-
-              <button
-                onClick={() => handleSelectTier('Custom Budget Proposal', `Custom Proposal (₹${selectedBudget.toLocaleString('en-IN')})`)}
-                className="w-full py-2.5 rounded-lg btn-shimmer text-white text-xs font-bold uppercase tracking-wider shadow-md hover:scale-105 transition"
-              >
-                Request Custom Proposal
-              </button>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
   );

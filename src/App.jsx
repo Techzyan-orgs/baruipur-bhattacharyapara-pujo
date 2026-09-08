@@ -20,9 +20,9 @@ export default function App() {
         <Navbar />
         <main>
           <Hero />
+          <ThemeStory />
           <SponsorshipTiers onSelectTier={setSelectedTier} />
           <SponsorMetrics />
-          <ThemeStory />
           <Gallery />
           <LocationMap />
           <ContactSection selectedTier={selectedTier} setSelectedTier={setSelectedTier} />

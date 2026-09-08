@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Download, FileText, Sparkles, Building, User, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Download, FileText, Sparkles, Building, User, MessageSquare, MessageCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function ContactSection({ selectedTier, setSelectedTier }) {
@@ -30,6 +30,17 @@ export default function ContactSection({ selectedTier, setSelectedTier }) {
       origin: { y: 0.6 },
       colors: ['#f39c12', '#d9272e', '#27ae60']
     });
+
+    const inquiryMessage = `*New Sponsorship Inquiry - Baruipur Bhattacharya Para Durgotsav 2026*
+👤 *Name:* ${formData.name}
+🏢 *Company/Brand:* ${formData.company}
+📧 *Email:* ${formData.email}
+📞 *Phone:* ${formData.phone}
+🏆 *Package:* ${formData.tier}
+📝 *Requirements/Notes:* ${formData.message ? formData.message : 'N/A'}`;
+
+    const whatsappUrl = `https://wa.me/916901264300?text=${encodeURIComponent(inquiryMessage)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   const handleDownloadDeck = () => {
@@ -38,7 +49,12 @@ export default function ContactSection({ selectedTier, setSelectedTier }) {
       spread: 50,
       origin: { y: 0.7 }
     });
-    alert("Official Sponsorship Proposal Deck (PDF) download initiated! You can also email bhattacharyaparadurgapuja@gmail.com for customized pitch decks.");
+    const link = document.createElement('a');
+    link.href = '/Souvenir_2026.pdf';
+    link.download = 'Souvenir_2026.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -64,50 +80,64 @@ export default function ContactSection({ selectedTier, setSelectedTier }) {
           {/* Left Column: Direct Business Contact Info & Deck Download */}
           <div className="lg:col-span-5 space-y-6">
             
-            <div className="glass-panel p-8 rounded-3xl border-festive-gold/30 shadow-2xl relative overflow-hidden">
+            <div className="glass-panel p-5 sm:p-8 rounded-3xl border-festive-gold/30 shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-festive-gold/10 rounded-full blur-3xl pointer-events-none"></div>
 
-              <h3 className="text-2xl font-bold text-white mb-6 font-bengali">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 font-bengali">
                 ব্যবসা ও স্পনসরশিপ দপ্তর • Business Contact
               </h3>
 
               <div className="space-y-6">
                 {/* Business Email */}
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-festive-gold/10 border border-festive-gold/30 flex items-center justify-center text-festive-gold shrink-0">
-                    <Mail className="w-6 h-6" />
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-festive-gold/10 border border-festive-gold/30 flex items-center justify-center text-festive-gold shrink-0 mt-0.5">
+                    <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <div>
-                    <span className="text-xs uppercase font-bold text-slate-400 block tracking-wider">Official Email</span>
-                    <a href="mailto:bhattacharyaparadurgapuja@gmail.com" className="text-base font-semibold text-festive-yellow hover:underline block">
-                      bhattacharyaparadurgapuja@gmail.com
+                  <div className="min-w-0 flex-1">
+                    <span className="text-[10px] sm:text-xs uppercase font-bold text-slate-400 block tracking-wider">Official Email</span>
+                    <a 
+                      href="mailto:bhattacharyaparadurgapuja@gmail.com" 
+                      className="text-xs xs:text-sm sm:text-base font-semibold text-festive-yellow hover:underline block leading-snug [overflow-wrap:anywhere]"
+                    >
+                      bhattacharyaparadurgapuja<wbr />@gmail.com
                     </a>
                   </div>
                 </div>
 
-                {/* Phone Numbers */}
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-festive-crimson/10 border border-festive-crimson/30 flex items-center justify-center text-festive-crimson shrink-0">
-                    <Phone className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <span className="text-xs uppercase font-bold text-slate-400 block tracking-wider">Direct Hotline & WhatsApp</span>
-                    <a href="tel:+919830012345" className="text-base font-bold text-white hover:text-festive-gold block">
-                      +91 98300 12345 <span className="text-xs font-normal text-slate-400">(Sponsorship Convenor)</span>
-                    </a>
-                    <a href="tel:+919831167890" className="text-sm font-semibold text-slate-300 hover:text-festive-gold block mt-0.5">
-                      +91 98311 67890 <span className="text-xs font-normal text-slate-400">(General Secretary)</span>
+                {/* Direct WhatsApp & Phone */}
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <a
+                    href="https://wa.me/916901264300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-500/15 border border-emerald-500/30 hover:border-emerald-400 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5 transition-all hover:scale-105 shadow-lg shadow-emerald-500/10 group/icon"
+                    title="Chat on WhatsApp"
+                  >
+                    <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 group-hover/icon:scale-110 transition-transform" />
+                  </a>
+                  <div className="min-w-0 flex-1">
+                    <span className="text-[10px] sm:text-xs uppercase font-bold text-slate-400 block tracking-wider">Direct Hotline & WhatsApp</span>
+                    <a 
+                      href="https://wa.me/916901264300" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-base sm:text-lg font-bold text-white hover:text-emerald-400 transition-colors inline-flex flex-wrap items-center gap-2 mt-0.5"
+                    >
+                      <span>+91 69012 64300</span>
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold hover:bg-emerald-500 hover:text-black transition">
+                        WhatsApp 💬
+                      </span>
                     </a>
                   </div>
                 </div>
 
                 {/* Office Location */}
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
-                    <MapPin className="w-6 h-6" />
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
+                    <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <div>
-                    <span className="text-xs uppercase font-bold text-slate-400 block tracking-wider">Committee Office</span>
+                  <div className="min-w-0 flex-1">
+                    <span className="text-[10px] sm:text-xs uppercase font-bold text-slate-400 block tracking-wider">Committee Office</span>
                     <p className="text-sm font-bengali text-festive-cream font-medium">
                       বারুইপুর ভট্টাচার্য্যপাড়া দুর্গোৎসব সমিতি ভবন
                     </p>
@@ -124,17 +154,25 @@ export default function ContactSection({ selectedTier, setSelectedTier }) {
                   <div className="flex items-center gap-3">
                     <FileText className="w-8 h-8 text-festive-gold" />
                     <div>
-                      <h4 className="text-xs font-bold text-white">Official Sponsorship Deck 2026</h4>
-                      <p className="text-[10px] text-slate-400">PDF • 12 Pages • Metrics & Floorplan</p>
+                      <h4 className="text-xs font-bold text-white">Golden Jubilee Souvenir & Sponsorship Deck</h4>
+                      <p className="text-[10px] text-slate-400">PDF • Official 2026 Edition</p>
                     </div>
                   </div>
-                  <button
-                    onClick={handleDownloadDeck}
-                    className="w-full sm:w-auto px-4 py-2 rounded-xl btn-shimmer text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md"
+                  <a
+                    href="/Souvenir_2026.pdf"
+                    download="Souvenir_2026.pdf"
+                    onClick={() => {
+                      confetti({
+                        particleCount: 40,
+                        spread: 50,
+                        origin: { y: 0.7 }
+                      });
+                    }}
+                    className="w-full sm:w-auto px-4 py-2.5 rounded-xl btn-shimmer text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md hover:scale-105 transition-transform"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Download PDF</span>
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -155,14 +193,27 @@ export default function ContactSection({ selectedTier, setSelectedTier }) {
                     ধন্যবাদ! Sponsorship Inquiry Received
                   </h3>
                   <p className="text-slate-300 text-sm max-w-md mx-auto">
-                    Our Sponsorship Convenor will contact you within 24 hours at <strong className="text-festive-yellow">{formData.email}</strong> with a detailed proposal and customized site layout.
+                    WhatsApp has opened with your inquiry details. Our Sponsorship Convenor will also reach out at <strong className="text-festive-yellow">{formData.email}</strong> or phone.
                   </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold"
-                  >
-                    Submit Another Response
-                  </button>
+                  <div className="pt-2 flex flex-wrap justify-center gap-3">
+                    <a
+                      href={`https://wa.me/916901264300?text=${encodeURIComponent(
+                        `*New Sponsorship Inquiry - Baruipur Bhattacharya Para Durgotsav 2026*\n👤 *Name:* ${formData.name}\n🏢 *Company/Brand:* ${formData.company}\n📧 *Email:* ${formData.email}\n📞 *Phone:* ${formData.phone}\n🏆 *Package:* ${formData.tier}\n📝 *Requirements/Notes:* ${formData.message || 'N/A'}`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold inline-flex items-center gap-2 shadow-md hover:scale-105 transition"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      <span>Re-open WhatsApp Chat</span>
+                    </a>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition"
+                    >
+                      Submit Another Response
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -274,7 +325,7 @@ export default function ContactSection({ selectedTier, setSelectedTier }) {
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl btn-shimmer text-white text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-festive-crimson/40 hover:scale-102 transition"
+                    className="w-full py-4 rounded-xl btn-shimmer text-white text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-festive-crimson/40 hover:scale-102 transition cursor-pointer"
                   >
                     <Send className="w-4 h-4 text-festive-yellow" />
                     <span>Submit Sponsorship Inquiry</span>
