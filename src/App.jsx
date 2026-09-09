@@ -12,7 +12,7 @@ import DhaakFloatingWidget from './components/DhaakFloatingWidget';
 import { DhaakAudioProvider } from './context/DhaakAudioContext';
 
 export default function App() {
-  const [selectedTier, setSelectedTier] = useState('Platinum Partner (₹75,000)');
+  const [selectedTier, setSelectedTier] = useState('Platinum Partner (₹50,000)');
 
   return (
     <DhaakAudioProvider>

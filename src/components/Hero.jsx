@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Award, FileText, Calendar, Users, Eye, TrendingUp, ChevronDown, CheckCircle2 } from 'lucide-react';
+import { Sparkles, Award, MessageSquare, Calendar, Users, Eye, TrendingUp, ChevronDown, CheckCircle2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function Hero() {
@@ -64,10 +64,11 @@ export default function Hero() {
           <span className="bg-festive-crimson text-white text-[10px] uppercase font-bold px-2.5 py-0.5 rounded-full">Sponsorship Open</span>
         </div>
 
-        {/* Committee Bengali Title */}
+        {/* Committee Bengali Title & Semantic English H1 for SEO */}
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-bengali text-festive-cream tracking-tight mb-4 leading-tight">
           বারুইপুর ভট্টাচার্য্যপাড়া <br className="hidden sm:block"/>
           <span className="text-gold-gradient drop-shadow-md">সার্বজনীন দুর্গোৎসব সমিতি</span>
+          <span className="sr-only"> - Baruipur Durga Puja 2026 | Bhattacharya Para Puja Committee</span>
         </h1>
 
         {/* English Subheading */}
@@ -116,8 +117,8 @@ export default function Hero() {
             href="#contact"
             className="w-full sm:w-auto px-8 py-4 rounded-full text-base font-semibold text-slate-200 glass-panel hover:bg-white/10 border-festive-gold/30 hover:border-festive-gold transition-all flex items-center justify-center gap-2"
           >
-            <FileText className="w-5 h-5 text-festive-gold" />
-            <span>Download Sponsorship Deck</span>
+            <MessageSquare className="w-5 h-5 text-festive-gold" />
+            <span>Contact Sponsorship Desk</span>
           </a>
         </div>
 

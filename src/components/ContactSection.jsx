@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Download, FileText, Sparkles, Building, User, MessageSquare, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, FileText, Sparkles, Building, User, MessageSquare, MessageCircle, Instagram, Facebook } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function ContactSection({ selectedTier, setSelectedTier }) {
@@ -8,7 +8,7 @@ export default function ContactSection({ selectedTier, setSelectedTier }) {
     company: '',
     email: '',
     phone: '',
-    tier: selectedTier || 'Platinum Partner (₹75,000)',
+    tier: selectedTier || 'Platinum Partner (₹50,000)',
     message: ''
   });
 
@@ -43,20 +43,6 @@ export default function ContactSection({ selectedTier, setSelectedTier }) {
     window.open(whatsappUrl, '_blank');
   };
 
-  const handleDownloadDeck = () => {
-    confetti({
-      particleCount: 40,
-      spread: 50,
-      origin: { y: 0.7 }
-    });
-    const link = document.createElement('a');
-    link.href = '/Souvenir_2026.pdf';
-    link.download = 'Souvenir_2026.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <section id="contact" className="py-24 bg-festive-gradient relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -77,7 +63,7 @@ export default function ContactSection({ selectedTier, setSelectedTier }) {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          {/* Left Column: Direct Business Contact Info & Deck Download */}
+          {/* Left Column: Direct Business Contact Info */}
           <div className="lg:col-span-5 space-y-6">
             
             <div className="glass-panel p-5 sm:p-8 rounded-3xl border-festive-gold/30 shadow-2xl relative overflow-hidden">
@@ -104,30 +90,55 @@ export default function ContactSection({ selectedTier, setSelectedTier }) {
                   </div>
                 </div>
 
-                {/* Direct WhatsApp & Phone */}
+                {/* Direct WhatsApp */}
                 <div className="flex items-start gap-3 sm:gap-4">
-                  <a
-                    href="https://wa.me/916901264300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-500/15 border border-emerald-500/30 hover:border-emerald-400 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5 transition-all hover:scale-105 shadow-lg shadow-emerald-500/10 group/icon"
-                    title="Chat on WhatsApp"
-                  >
-                    <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 group-hover/icon:scale-110 transition-transform" />
-                  </a>
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5 shadow-lg shadow-emerald-500/10">
+                    <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </div>
                   <div className="min-w-0 flex-1">
-                    <span className="text-[10px] sm:text-xs uppercase font-bold text-slate-400 block tracking-wider">Direct Hotline & WhatsApp</span>
-                    <a 
-                      href="https://wa.me/916901264300" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-base sm:text-lg font-bold text-white hover:text-emerald-400 transition-colors inline-flex flex-wrap items-center gap-2 mt-0.5"
-                    >
-                      <span>+91 69012 64300</span>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold hover:bg-emerald-500 hover:text-black transition">
-                        WhatsApp 💬
-                      </span>
-                    </a>
+                    <span className="text-[10px] sm:text-xs uppercase font-bold text-slate-400 block tracking-wider">Direct WhatsApp</span>
+                    
+                    <div className="space-y-2 mt-1.5">
+                      {/* Number 1: 69012 64300 */}
+                      <div className="flex flex-wrap items-center gap-2">
+                        <a 
+                          href="https://wa.me/916901264300"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm sm:text-base font-bold text-white hover:text-emerald-400 transition-colors"
+                        >
+                          +91 69012 64300
+                        </a>
+                        <a 
+                          href="https://wa.me/916901264300" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold hover:bg-emerald-500 hover:text-black transition flex items-center gap-1"
+                        >
+                          WhatsApp 💬
+                        </a>
+                      </div>
+
+                      {/* Number 2: 86975 55684 */}
+                      <div className="flex flex-wrap items-center gap-2">
+                        <a 
+                          href="https://wa.me/918697555684"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm sm:text-base font-bold text-white hover:text-emerald-400 transition-colors"
+                        >
+                          +91 86975 55684
+                        </a>
+                        <a 
+                          href="https://wa.me/918697555684" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold hover:bg-emerald-500 hover:text-black transition flex items-center gap-1"
+                        >
+                          WhatsApp 💬
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -146,33 +157,57 @@ export default function ContactSection({ selectedTier, setSelectedTier }) {
                     </p>
                   </div>
                 </div>
-              </div>
 
-              {/* Download Brochure Box */}
-              <div className="mt-8 pt-6 border-t border-white/10">
-                <div className="p-4 rounded-2xl bg-black/40 border border-festive-gold/20 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <FileText className="w-8 h-8 text-festive-gold" />
+                {/* Official Social Media Channels - High Visibility Card */}
+                <div className="p-4 rounded-2xl bg-gradient-to-br from-white/[0.07] to-white/[0.02] border border-festive-gold/30 shadow-xl">
+                  <div className="flex items-center gap-3 mb-2.5">
+                    <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500/30 via-pink-500/30 to-blue-500/30 border border-festive-gold/40 flex items-center justify-center text-festive-yellow shrink-0 shadow-sm">
+                      <Sparkles className="w-5 h-5 text-festive-gold" />
+                    </div>
                     <div>
-                      <h4 className="text-xs font-bold text-white">Golden Jubilee Souvenir & Sponsorship Deck</h4>
-                      <p className="text-[10px] text-slate-400">PDF • Official 2026 Edition</p>
+                      <span className="text-[10px] uppercase font-bold text-festive-gold tracking-wider block">
+                        Official Social Media • যুক্ত থাকুন
+                      </span>
+                      <h4 className="text-xs sm:text-sm font-bold text-white">
+                        Follow Pujo Live Updates & Videos
+                      </h4>
                     </div>
                   </div>
-                  <a
-                    href="/Souvenir_2026.pdf"
-                    download="Souvenir_2026.pdf"
-                    onClick={() => {
-                      confetti({
-                        particleCount: 40,
-                        spread: 50,
-                        origin: { y: 0.7 }
-                      });
-                    }}
-                    className="w-full sm:w-auto px-4 py-2.5 rounded-xl btn-shimmer text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md hover:scale-105 transition-transform"
-                  >
-                    <Download className="w-3.5 h-3.5" />
-                    <span>Download PDF</span>
-                  </a>
+                  <p className="text-xs text-slate-300 mb-3 leading-relaxed">
+                    Catch idol sculpting, pandal construction progress, cultural events & community announcements:
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <a
+                      href="https://www.facebook.com/share/17dEsSNs8Z"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2.5 rounded-xl bg-[#1877F2]/15 hover:bg-[#1877F2] border border-[#1877F2]/40 hover:border-[#1877F2] text-white flex items-center gap-2.5 transition-all duration-300 group hover:shadow-lg hover:shadow-[#1877F2]/30 hover:scale-[1.02]"
+                      title="Follow on Facebook"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[#1877F2] flex items-center justify-center text-white shrink-0 shadow">
+                        <Facebook className="w-4 h-4" />
+                      </div>
+                      <div className="min-w-0">
+                        <span className="text-xs font-bold block group-hover:text-white text-slate-100">Facebook Page</span>
+                        <span className="text-[10px] text-blue-300/80 group-hover:text-white/90 block truncate">Official Community</span>
+                      </div>
+                    </a>
+                    <a
+                      href="https://www.instagram.com/baruipurbhattacharyaparapuja"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2.5 rounded-xl bg-gradient-to-r from-[#f09433]/15 via-[#dc2743]/15 to-[#bc1888]/15 hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] border border-pink-500/40 hover:border-transparent text-white flex items-center gap-2.5 transition-all duration-300 group hover:shadow-lg hover:shadow-pink-500/30 hover:scale-[1.02]"
+                      title="Follow on Instagram"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white shrink-0 shadow">
+                        <Instagram className="w-4 h-4" />
+                      </div>
+                      <div className="min-w-0">
+                        <span className="text-xs font-bold block group-hover:text-white text-slate-100">Instagram Profile</span>
+                        <span className="text-[10px] text-pink-300/80 group-hover:text-white/90 block truncate">@baruipurbhattacharya...</span>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -300,10 +335,10 @@ export default function ContactSection({ selectedTier, setSelectedTier }) {
                       }}
                       className="w-full px-4 py-3 rounded-xl bg-black/80 border border-white/10 text-white text-sm focus:border-festive-gold outline-none transition"
                     >
-                      <option value="Title Sponsor (₹2,50,000+)">Title Sponsor (Exclusive - ₹2,50,000+)</option>
-                      <option value="Powered By Sponsor (₹1,50,000)">Powered By Sponsor (₹1,50,000)</option>
-                      <option value="Platinum Partner (₹75,000)">Platinum Partner (₹75,000)</option>
-                      <option value="Gold Partner (₹40,000)">Gold Partner (₹40,000)</option>
+                      <option value="Title Sponsor (₹2,00,000)">Title Sponsor (Exclusive - ₹2,00,000)</option>
+                      <option value="Powered By Sponsor (₹1,00,000)">Powered By Sponsor (₹1,00,000)</option>
+                      <option value="Platinum Partner (₹50,000)">Platinum Partner (₹50,000)</option>
+                      <option value="Gold Partner (₹30,000)">Gold Partner (₹30,000)</option>
                       <option value="Silver & Stall Partner (₹20,000)">Silver & Stall Partner (₹20,000)</option>
                       <option value="Custom Budget Proposal">Custom Budget / Banner Placement Only</option>
                     </select>

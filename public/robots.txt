@@ -1,0 +1,8 @@
+# Robots.txt for Baruipur Bhattacharya Para Durgotsav 2026
+# Allow all search engine crawlers (Googlebot, Bingbot, Yahoo, DuckDuckGo, etc.)
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://baruipurbhattacharyaparapujo.in/sitemap.xml

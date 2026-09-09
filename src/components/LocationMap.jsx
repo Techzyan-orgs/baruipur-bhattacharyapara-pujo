@@ -56,18 +56,29 @@ export default function LocationMap() {
           {/* Right Column: Transit & Directions Guide */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
             
-            {/* Address Card */}
-            <div className="glass-panel p-6 rounded-2xl border-festive-gold/30">
+            {/* Address Card with Local SEO Microdata */}
+            <div 
+              className="glass-panel p-6 rounded-2xl border-festive-gold/30"
+              itemScope 
+              itemType="https://schema.org/Place"
+            >
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
                 <Compass className="w-5 h-5 text-festive-gold" />
-                <span>Official Venue Address</span>
+                <span itemProp="name">Official Venue Address</span>
               </h3>
               <p className="text-sm font-bengali text-festive-yellow mb-1 font-semibold">
                 বারুইপুর ভট্টাচার্য্যপাড়া সার্বজনীন দুর্গোৎসব সমিতি
               </p>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Bhattacharya Para Ground, beside Rabindra Bhaban, P.O. & P.S. Baruipur, District South 24 Parganas, Kolkata, West Bengal 700144.
-              </p>
+              <div 
+                itemProp="address" 
+                itemScope 
+                itemType="https://schema.org/PostalAddress" 
+                className="text-sm text-slate-300 leading-relaxed"
+              >
+                <span itemProp="streetAddress">Bhattacharya Para Ground, beside Rabindra Bhaban & Ananda Uddyan</span>, 
+                P.O. & P.S. <span itemProp="addressLocality">Baruipur</span>, 
+                District <span itemProp="addressRegion">South 24 Parganas, West Bengal</span> <span itemProp="postalCode">700144</span>.
+              </div>
             </div>
 
             {/* Transit Options */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Sparkles, Award, MapPin, Mail, ArrowUp } from 'lucide-react';
+import { Heart, Sparkles, Award, MapPin, Mail, ArrowUp, Instagram, Facebook } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -35,10 +35,38 @@ export default function Footer() {
               South 24 Parganas' premier festive cultural celebration & high-visibility corporate sponsorship venue. Bringing community and brands together.
             </p>
 
-            <div className="pt-2">
-              <span className="inline-block px-3 py-1 rounded-full bg-festive-gold/10 border border-festive-gold/30 text-festive-yellow text-xs font-bengali">
+            <div className="pt-1">
+              <span className="inline-block px-3 py-1 rounded-full bg-festive-gold/10 border border-festive-gold/30 text-festive-yellow text-xs font-bengali mb-3">
                 সবাইকে শারদীয়ার প্রীতি ও আন্তরিক শুভেচ্ছা 🌸
               </span>
+
+              <div className="pt-1">
+                <span className="text-[11px] uppercase font-bold text-festive-gold tracking-wider block mb-2.5">
+                  Official Social Channels • যুক্ত থাকুন
+                </span>
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <a
+                    href="https://www.facebook.com/share/17dEsSNs8Z"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-2 rounded-xl bg-[#1877F2]/20 hover:bg-[#1877F2] border border-[#1877F2]/50 hover:border-[#1877F2] text-white text-xs font-bold flex items-center gap-2 transition-all duration-300 hover:scale-105 shadow-md shadow-[#1877F2]/10 group"
+                    title="Baruipur Bhattacharya Para Durgotsav on Facebook"
+                  >
+                    <Facebook className="w-4 h-4 text-[#1877F2] group-hover:text-white transition-colors" />
+                    <span>Facebook</span>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/baruipurbhattacharyaparapuja"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-500/20 via-pink-500/20 to-purple-500/20 hover:from-amber-500 hover:via-pink-500 hover:to-purple-500 border border-pink-500/50 hover:border-transparent text-white text-xs font-bold flex items-center gap-2 transition-all duration-300 hover:scale-105 shadow-md shadow-pink-500/10 group"
+                    title="Baruipur Bhattacharya Para Durgotsav on Instagram"
+                  >
+                    <Instagram className="w-4 h-4 text-[#E4405F] group-hover:text-white transition-colors" />
+                    <span>Instagram</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -64,10 +92,10 @@ export default function Footer() {
               Sponsorship Tiers
             </h4>
             <ul className="space-y-2.5 text-xs">
-              <li><a href="#sponsorship" className="hover:text-festive-gold transition">Title Sponsor (₹2,50,000+)</a></li>
-              <li><a href="#sponsorship" className="hover:text-festive-gold transition">Powered By (₹1,50,000)</a></li>
-              <li><a href="#sponsorship" className="hover:text-festive-gold transition">Platinum Partner (₹75,000)</a></li>
-              <li><a href="#sponsorship" className="hover:text-festive-gold transition">Gold Partner (₹40,000)</a></li>
+              <li><a href="#sponsorship" className="hover:text-festive-gold transition">Title Sponsor (₹2,00,000)</a></li>
+              <li><a href="#sponsorship" className="hover:text-festive-gold transition">Powered By (₹1,00,000)</a></li>
+              <li><a href="#sponsorship" className="hover:text-festive-gold transition">Platinum Partner (₹50,000)</a></li>
+              <li><a href="#sponsorship" className="hover:text-festive-gold transition">Gold Partner (₹30,000)</a></li>
               <li><a href="#sponsorship" className="hover:text-festive-gold transition">Silver & Stall (₹20,000)</a></li>
             </ul>
           </div>
@@ -86,6 +114,13 @@ export default function Footer() {
                 >
                   bhattacharyaparadurgapuja<wbr />@gmail.com
                 </a>
+              </div>
+              <div>
+                <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Official WhatsApp</span>
+                <div className="flex flex-col gap-1 text-slate-300">
+                  <a href="https://wa.me/916901264300" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition flex items-center gap-1.5">+91 69012 64300 <span className="text-[10px] text-emerald-400 font-semibold">(WhatsApp)</span></a>
+                  <a href="https://wa.me/918697555684" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition flex items-center gap-1.5">+91 86975 55684 <span className="text-[10px] text-emerald-400 font-semibold">(WhatsApp)</span></a>
+                </div>
               </div>
               <div>
                 <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Location</span>

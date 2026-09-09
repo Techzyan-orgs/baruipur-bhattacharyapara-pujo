@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Award, ChevronRight } from 'lucide-react';
+import { Menu, X, Award, ChevronRight, Instagram, Facebook } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -101,8 +101,32 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-3 shrink-0">
+          {/* Social & CTA Buttons */}
+          <div className="hidden md:flex items-center gap-2.5 lg:gap-3 shrink-0">
+            {/* Direct Social Follow Badges */}
+            <div className="flex items-center gap-1.5 bg-black/40 p-1 rounded-full border border-white/10 shadow-inner">
+              <a
+                href="https://www.facebook.com/share/17dEsSNs8Z"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our official Facebook page"
+                className="p-1.5 sm:p-2 rounded-full bg-[#1877F2]/20 hover:bg-[#1877F2] text-[#1877F2] hover:text-white border border-[#1877F2]/40 hover:border-[#1877F2] transition-all hover:scale-110 shadow-sm group"
+                title="Official Facebook Page"
+              >
+                <Facebook className="w-4 h-4 transition-transform group-hover:scale-110" />
+              </a>
+              <a
+                href="https://www.instagram.com/baruipurbhattacharyaparapuja"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our official Instagram profile"
+                className="p-1.5 sm:p-2 rounded-full bg-gradient-to-tr from-[#f09433]/20 via-[#dc2743]/20 to-[#bc1888]/20 hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] text-[#E4405F] hover:text-white border border-pink-500/30 hover:border-transparent transition-all hover:scale-110 shadow-sm group"
+                title="Official Instagram Profile"
+              >
+                <Instagram className="w-4 h-4 transition-transform group-hover:scale-110" />
+              </a>
+            </div>
+
             <a
               href="#sponsorship"
               className="relative inline-flex items-center gap-2 px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold text-white btn-shimmer shadow-lg shadow-festive-crimson/30 hover:scale-105 transition-transform whitespace-nowrap"
@@ -141,7 +165,7 @@ export default function Navbar() {
                 <ChevronRight className="w-4 h-4 text-festive-gold/60" />
               </a>
             ))}
-            <div className="pt-3 border-t border-white/10 mt-2">
+            <div className="pt-3 border-t border-white/10 mt-2 space-y-3">
               <a
                 href="#sponsorship"
                 onClick={() => setMobileMenuOpen(false)}
@@ -150,6 +174,32 @@ export default function Navbar() {
                 <Award className="w-4 h-4 text-festive-yellow" />
                 <span>Become a Sponsor</span>
               </a>
+
+              <div className="pt-2">
+                <span className="text-[10px] uppercase font-bold text-festive-gold/80 tracking-wider block text-center mb-2">
+                  Official Social Channels
+                </span>
+                <div className="grid grid-cols-2 gap-2.5">
+                  <a
+                    href="https://www.facebook.com/share/17dEsSNs8Z"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-2.5 rounded-xl bg-[#1877F2]/20 hover:bg-[#1877F2]/30 border border-[#1877F2]/50 text-white text-xs font-bold flex items-center justify-center gap-2 transition active:scale-95 shadow-md shadow-[#1877F2]/10"
+                  >
+                    <Facebook className="w-4 h-4 text-[#1877F2]" />
+                    <span>Facebook</span>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/baruipurbhattacharyaparapuja"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-2.5 rounded-xl bg-gradient-to-r from-amber-500/20 via-pink-500/20 to-purple-500/20 hover:from-amber-500/30 hover:via-pink-500/30 hover:to-purple-500/30 border border-pink-500/50 text-white text-xs font-bold flex items-center justify-center gap-2 transition active:scale-95 shadow-md shadow-pink-500/10"
+                  >
+                    <Instagram className="w-4 h-4 text-[#E4405F]" />
+                    <span>Instagram</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
