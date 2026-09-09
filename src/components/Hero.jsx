@@ -57,12 +57,15 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         
-        {/* Top Tagline Pill */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border-festive-gold/50 text-festive-yellow text-xs sm:text-sm font-semibold mb-6 shadow-glow-gold animate-bounce-slow">
-          <Sparkles className="w-4 h-4 text-festive-gold" />
+        {/* Top Tagline Pill - Clicking navigates to Sponsorship Section */}
+        <a 
+          href="#sponsorship"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border-festive-gold/50 text-festive-yellow text-xs sm:text-sm font-semibold mb-6 shadow-glow-gold animate-bounce-slow hover:border-festive-gold hover:scale-105 transition-all duration-300 cursor-pointer group"
+        >
+          <Sparkles className="w-4 h-4 text-festive-gold group-hover:rotate-12 transition-transform" />
           <span className="font-bengali text-base">🎉 Celebrating 50th Year Golden Jubilee Durgotsav • ৫০তম বর্ষ সুবর্ণ জয়ন্তী</span>
-          <span className="bg-festive-crimson text-white text-[10px] uppercase font-bold px-2.5 py-0.5 rounded-full">Sponsorship Open</span>
-        </div>
+          <span className="bg-festive-crimson text-white text-[10px] uppercase font-bold px-2.5 py-0.5 rounded-full group-hover:bg-red-600 transition-colors shadow-sm">Sponsorship Open</span>
+        </a>
 
         {/* Committee Bengali Title & Semantic English H1 for SEO */}
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-bengali text-festive-cream tracking-tight mb-4 leading-tight">
