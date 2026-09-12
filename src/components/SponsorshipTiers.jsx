@@ -169,8 +169,11 @@ export default function SponsorshipTiers({ onSelectTier }) {
 
                 {/* Price Tag */}
                 <div className="my-6 pb-6 border-b border-white/10 flex items-baseline gap-2">
-                  <span className="text-4xl font-extrabold text-festive-cream font-mono">{tier.price}</span>
-                  <span className="text-xs text-slate-400 font-semibold">/ Festival Season</span>
+                  <span className="text-3xl sm:text-4xl font-extrabold text-white font-sans tracking-tight">
+                    <span className="text-festive-gold font-bold mr-0.5">₹</span>
+                    {tier.price.replace('₹', '')}
+                  </span>
+                  <span className="text-xs text-slate-400 font-medium">/ Festival Season</span>
                 </div>
 
                 {/* Perks Checklist */}
