@@ -76,7 +76,7 @@ export default function Hero() {
 
         {/* English Subheading */}
         <p className="text-base sm:text-xl md:text-2xl font-light text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed">
-          Celebrating <strong className="text-festive-yellow font-semibold">50 Glorious Years</strong> of Durgotsav Heritage in Baruipur. Elevate your brand in front of <strong className="text-festive-cream font-semibold">150,000+ Festive Visitors</strong> during this historic Golden Jubilee!
+          Celebrating <strong className="text-festive-yellow font-semibold">50 Glorious Years</strong> of Durgotsav Heritage in Baruipur. Elevate your brand in front of <strong className="text-festive-cream font-semibold">100,000+ Festive Visitors</strong> during this historic Golden Jubilee!
         </p>
 
         {/* Live Countdown Timer */}
@@ -129,13 +129,13 @@ export default function Hero() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
           <div className="glass-panel p-4 rounded-xl border-festive-gold/20 flex flex-col items-center">
             <Users className="w-6 h-6 text-festive-gold mb-1" />
-            <span className="text-2xl font-black text-white">150,000+</span>
+            <span className="text-2xl font-black text-white">100,000+</span>
             <span className="text-xs text-slate-400 font-medium">Estimated Footfall</span>
           </div>
 
           <div className="glass-panel p-4 rounded-xl border-festive-gold/20 flex flex-col items-center">
             <Eye className="w-6 h-6 text-festive-yellow mb-1" />
-            <span className="text-2xl font-black text-white">2.5M+</span>
+            <span className="text-2xl font-black text-white">200,000+</span>
             <span className="text-xs text-slate-400 font-medium">Digital & Outdoor Reach</span>
           </div>
 

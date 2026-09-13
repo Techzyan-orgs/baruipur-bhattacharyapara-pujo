@@ -290,7 +290,7 @@ export default function ThemeStory() {
                 <Sparkles className="w-5 h-5 text-festive-yellow shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-xs font-bold text-white mb-1">Massive Festive Reach</h4>
-                  <p className="text-[11px] text-slate-400">Over 1,50,000+ footfalls across 5 festive days with premium sponsor gate & banner placements.</p>
+                  <p className="text-[11px] text-slate-400">Over 1,00,000+ footfalls across 5 festive days with premium sponsor gate & banner placements.</p>
                 </div>
               </div>
             </div>
